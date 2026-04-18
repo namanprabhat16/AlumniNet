@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5 mb-5" style="max-width: 580px;">
+    <div class="card p-5" style="border-top: 4px solid var(--gold);">
+        <h3 class="mb-1" style="font-weight: 700; color: var(--navy);">📢 Post Announcement</h3>
+        <p class="text-muted mb-4">Share news with the alumni community</p>
+
+        <form method="POST">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+                {{ form.title.label(class="form-label fw-semibold") }}
+                {{ form.title(class="form-control", placeholder="e.g. Annual Alumni Meetup 2026") }}
+            </div>
+
+            <div class="mb-4">
+                {{ form.content.label(class="form-label fw-semibold") }}
+                {{ form.content(class="form-control", rows=5, placeholder="Write your announcement here...") }}
+            </div>
+
+            <button type="submit" class="btn w-100"
+                    style="background-color: var(--navy); color: var(--gold); font-weight: 600; padding: 12px; border-radius: 8px;">
+                Post Announcement ✓
+            </button>
+
+            <a href="{{ url_for('announcements') }}" class="btn w-100 mt-2"
+               style="border: 2px solid var(--navy); color: var(--navy); border-radius: 8px; padding: 10px;">
+                ← Back
+            </a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

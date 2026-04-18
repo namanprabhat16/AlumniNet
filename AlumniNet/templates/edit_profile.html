@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5 mb-5" style="max-width: 580px;">
+    <div class="card p-5" style="border-top: 4px solid var(--gold);">
+        <h3 class="mb-1" style="font-weight: 700; color: var(--navy);">✏️ Edit Profile</h3>
+        <p class="text-muted mb-4">Keep your information up to date</p>
+
+        <form method="POST">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+                {{ form.name.label(class="form-label fw-semibold") }}
+                {{ form.name(class="form-control") }}
+            </div>
+
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    {{ form.graduation_year.label(class="form-label fw-semibold") }}
+                    {{ form.graduation_year(class="form-control", placeholder="e.g. 2022") }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.degree.label(class="form-label fw-semibold") }}
+                    {{ form.degree(class="form-control", placeholder="e.g. B.Tech CSE") }}
+                </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    {{ form.current_job.label(class="form-label fw-semibold") }}
+                    {{ form.current_job(class="form-control", placeholder="e.g. Software Engineer") }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.company.label(class="form-label fw-semibold") }}
+                    {{ form.company(class="form-control", placeholder="e.g. Google") }}
+                </div>
+            </div>
+
+            <div class="mb-3">
+                {{ form.location.label(class="form-label fw-semibold") }}
+                {{ form.location(class="form-control", placeholder="e.g. Delhi, India") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.bio.label(class="form-label fw-semibold") }}
+                {{ form.bio(class="form-control", rows=4, placeholder="Tell others about yourself...") }}
+            </div>
+
+            <div class="mb-4">
+                {{ form.linkedin.label(class="form-label fw-semibold") }}
+                {{ form.linkedin(class="form-control", placeholder="https://linkedin.com/in/yourname") }}
+            </div>
+
+            <button type="submit" class="btn w-100" style="background-color: var(--navy); color: var(--gold); font-weight: 600; padding: 12px; border-radius: 8px;">
+                Save Changes ✓
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

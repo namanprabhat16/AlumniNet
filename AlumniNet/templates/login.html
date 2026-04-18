@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="min-height: 80vh; display: flex; align-items: center; justify-content: center; background-color: #f4f6fb;">
+    <div class="card p-5" style="width: 100%; max-width: 420px; border-top: 4px solid var(--gold);">
+        <h3 class="text-center mb-1" style="font-weight: 700; color: var(--navy);">Welcome Back 👋</h3>
+        <p class="text-center text-muted mb-4">Login to your AlumniNet account</p>
+
+        <form method="POST">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+                {{ form.email.label(class="form-label fw-semibold") }}
+                {{ form.email(class="form-control", placeholder="you@example.com") }}
+            </div>
+
+            <div class="mb-4">
+                {{ form.password.label(class="form-label fw-semibold") }}
+                {{ form.password(class="form-control", placeholder="Enter your password") }}
+            </div>
+
+            <button type="submit" class="btn w-100" style="background-color: var(--navy); color: var(--gold); font-weight: 600; padding: 10px; border-radius: 8px;">
+                Login →
+            </button>
+        </form>
+
+        <p class="text-center mt-4 text-muted" style="font-size: 0.9rem;">
+            Don't have an account? <a href="{{ url_for('register') }}" style="color: var(--navy); font-weight: 600;">Register here</a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
