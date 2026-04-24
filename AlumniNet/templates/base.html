@@ -36,12 +36,17 @@
             border: 1.5px solid var(--gold);
             color: var(--gold) !important;
             border-radius: 6px;
-            padding: 5px 14px;
-            font-size: 0.9rem;
-            margin-left: 8px;
+            padding: 5px 10px;
+            font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+            margin-left: 4px;
             text-decoration: none;
             transition: all 0.2s;
+            white-space: nowrap;
         }
+
+.navbar-brand {
+    font-size: clamp(1rem, 3vw, 1.4rem) !important;
+}
 
         .nav-btn:hover {
             background-color: var(--gold);
@@ -108,7 +113,29 @@
             margin-top: 60px;
             font-size: 0.85rem;
             border-top: 2px solid var(--gold);
-        }
+        }@media (max-width: 768px) {
+    .nav-btn {
+        padding: 4px 7px;
+        font-size: 0.75rem;
+        margin-left: 2px;
+    }
+    .nav-text {
+        font-size: 0.75rem !important;
+        margin-left: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-btn {
+        padding: 3px 5px;
+        font-size: 0.65rem;
+        margin-left: 1px;
+    }
+    .nav-text {
+        display: none;
+    }
+}
+        
     </style>
 </head>
 <body>
